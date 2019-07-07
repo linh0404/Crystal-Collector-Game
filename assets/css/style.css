@@ -1,6 +1,12 @@
 body {
-    background: url(https://gondwanastudios.com/wp-content/uploads/2019/05/slider-8.jpg) no-repeat center center fixed;
+    background: url(https://s.hswstatic.com/gif/2f67fed30fffd6972eafe47e1225c3cc-2018-05-03-brainstuff-egyptian-dinosaur.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.container {
+    background: #F5F5F5;
+    opacity: 0.8;
+}

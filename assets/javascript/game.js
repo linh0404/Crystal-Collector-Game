@@ -7,3 +7,30 @@
 // if score > target, you lose
 // if score < target, continue
 // if score = target, you win
+
+var target = [];
+var diamond = [];
+var topaz = [];
+var ruby = [];
+var garnet = [];
+var score = [];
+
+target = Math.floor(Math.random() * 120) + 19;
+console.log(target)
+
+diamond = Math.floor(Math.random() * 12) + 1;
+console.log(diamond)
+
+topaz = Math.floor(Math.random() * 12) + 1;
+console.log(topaz)
+
+ruby = Math.floor(Math.random() * 12) + 1;
+console.log(ruby)
+
+garnet = Math.floor(Math.random() * 12) + 1;
+console.log(garnet)
+
+window.onload = function () {
+    document.getElementById("target").innerHTML= "Match Number: " + target;
+}
+

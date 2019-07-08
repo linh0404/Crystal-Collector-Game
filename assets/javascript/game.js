@@ -13,7 +13,7 @@ var diamond = [];
 var topaz = [];
 var ruby = [];
 var garnet = [];
-var score = [];
+var score = 0;
 
 target = Math.floor(Math.random() * 120) + 19;
 console.log(target)
@@ -30,7 +30,7 @@ console.log(ruby)
 garnet = Math.floor(Math.random() * 12) + 1;
 console.log(garnet)
 
-window.onload = function () {
-    document.getElementById("target").innerHTML= "Match Number: " + target;
-}
 
+document.getElementById("randomNumber").innerHTML= target;
+
+document.getElementById("totalNumber").innerHTML= score;

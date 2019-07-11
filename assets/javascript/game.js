@@ -15,53 +15,64 @@ $(document).ready(function() {
 
 var target = [];
 var score = 0;
+var diamond = "";
+var topaz = "";
+var ruby = "";
+var garnet = "";
 var gems = [];
 
-
+// calculate random target number between 19 - 120
 target = Math.floor(Math.random() * 120) + 19;
 console.log(target)
 
-diamond = Math.floor(Math.random() * 12) + 1;
-console.log(diamond)
+// calculate 4 random no.s between 1 - 12
+for (var i = 0; i < 4 ; i++) {
+    var a = Math.floor(Math.random() * 12) + 1;
+    gems.push(a);
+}
 
-topaz = Math.floor(Math.random() * 12) + 1;
-console.log(topaz)
+// assign a random number from the array to each crystal
+diamond = gems[0];
+topaz = gems[1];
+ruby = gems[2];
+garnet = gems[3];
 
-ruby = Math.floor(Math.random() * 12) + 1;
-console.log(ruby)
-
-garnet = Math.floor(Math.random() * 12) + 1;
-console.log(garnet)
-
+//display target and scores on the html
 document.getElementById("randomNumber").innerHTML= target;
 document.getElementById("totalNumber").innerHTML= score;
 
-$(document).ready(function() {
-    $('#diamond').click(function() {
-        alert('clicked');
-        this.value = diamond;
-    });
-})
+//reset function 
 
-$(document).ready(function() {
-    $('#topaz').click(function() {
-        alert('clicked');
-        this.value = topaz;
-    })
-})
 
-$(document).ready(function() {
-    $('#garnet').click(function() {
-        alert('clicked');
-        this.value = garnet;
-    })
-})
 
-$(document).ready(function() {
-    $('#ruby').click(function() {
-        alert('clicked');
-        this.value = ruby;
-    })
-})
+
+
+// $(document).ready(function() {
+//     $('#diamond').click(function() {
+//         alert('clicked');
+//         this.value = diamond;
+//     });
+// })
+
+// $(document).ready(function() {
+//     $('#topaz').click(function() {
+//         alert('clicked');
+//         this.value = topaz;
+//     })
+// })
+
+// $(document).ready(function() {
+//     $('#garnet').click(function() {
+//         alert('clicked');
+//         this.value = garnet;
+//     })
+// })
+
+// $(document).ready(function() {
+//     $('#ruby').click(function() {
+//         alert('clicked');
+//         this.value = ruby;
+//     })
+// })
 
 })

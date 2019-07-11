@@ -20,6 +20,8 @@ var topaz = "";
 var ruby = "";
 var garnet = "";
 var gems = [];
+var wins = 0
+var losses = 0
 
 // calculate random target number between 19 - 120
 target = Math.floor(Math.random() * 120) + 19;
@@ -45,34 +47,39 @@ document.getElementById("totalNumber").innerHTML= score;
 
 
 
+//assign each gem to the corresponding button
+$("#button-1").on("click",function() {
+    score += diamond;
+    $("#totalNumber").html(score);
+});
 
+$("#button-2").on("click",function() {
+    score += topaz;
+    $("#totalNumber").html(score);
+});
 
-// $(document).ready(function() {
-//     $('#diamond').click(function() {
-//         alert('clicked');
-//         this.value = diamond;
-//     });
-// })
+$("#button-3").on("click",function() {
+    score += garnet;
+    $("#totalNumber").html(score);
+});
 
-// $(document).ready(function() {
-//     $('#topaz').click(function() {
-//         alert('clicked');
-//         this.value = topaz;
-//     })
-// })
+$("#button-4").on("click",function() {
+    score += ruby;
+    $("#totalNumber").html(score);
+});
 
-// $(document).ready(function() {
-//     $('#garnet').click(function() {
-//         alert('clicked');
-//         this.value = garnet;
-//     })
-// })
-
-// $(document).ready(function() {
-//     $('#ruby').click(function() {
-//         alert('clicked');
-//         this.value = ruby;
-//     })
-// })
-
+$("button").on("click", function() {
+    if (score == target) {
+        wins++;
+        $("#totalNumber").html(score);
+        $("#wins").html("Wins: " + wins);
+        alert("Winner, winner, chicken dinner!")
+    }
+    else if (score > target) {
+        losses++;
+        $("#totalNumber").html(score);
+        $("#losses").html("Losses: " + losses);
+        alert("Git gud, noob")
+    }
+})
 })

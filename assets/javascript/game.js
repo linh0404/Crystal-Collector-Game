@@ -13,39 +13,55 @@
 
 $(document).ready(function() {
 
-var target = [];
 var score = 0;
+var target = [];
 var diamond = "";
 var topaz = "";
 var ruby = "";
 var garnet = "";
 var gems = [];
-var wins = 0
-var losses = 0
+var wins = 0;
+var losses = 0;
 
 // calculate random target number between 19 - 120
-target = Math.floor(Math.random() * 120) + 19;
-console.log(target)
+function randomNo() {
+    var x = Math.floor(Math.random() * 120) + 19;
+    target.push(x);
+    console.log(target);
+    }
 
 // calculate 4 random no.s between 1 - 12
-for (var i = 0; i < 4 ; i++) {
+function crystals() {
+    for (var i = 0; i < 4 ; i++) {
     var a = Math.floor(Math.random() * 12) + 1;
     gems.push(a);
-}
-
-// assign a random number from the array to each crystal
-diamond = gems[0];
-topaz = gems[1];
-ruby = gems[2];
-garnet = gems[3];
-
-//display target and scores on the html
-document.getElementById("randomNumber").innerHTML= target;
-document.getElementById("totalNumber").innerHTML= score;
+    }
+    
+    // assign a random number from the array to each crystal
+    diamond = gems[0];
+    topaz = gems[1];
+    ruby = gems[2];
+    garnet = gems[3];
+    console.log(gems);
+    }
 
 //reset function 
+var reset = function() {
+    score = 0;
+    target = [];
+    gems = [];
+    crystals();
+    randomNo();
+    //display target and scores on the html
+    document.getElementById("randomNumber").innerHTML= target;
+    document.getElementById("totalNumber").innerHTML= score;
+}
 
+reset();
 
+// //display target and scores on the html
+// document.getElementById("randomNumber").innerHTML= target;
+// document.getElementById("totalNumber").innerHTML= score;
 
 //assign each gem to the corresponding button
 $("#button-1").on("click",function() {
@@ -74,12 +90,18 @@ $("button").on("click", function() {
         $("#totalNumber").html(score);
         $("#wins").html("Wins: " + wins);
         alert("Winner, winner, chicken dinner!")
+        var audio = new Audio ("assets/images/chicken.m4a");
+        audio.play();
+        reset();
     }
     else if (score > target) {
         losses++;
         $("#totalNumber").html(score);
         $("#losses").html("Losses: " + losses);
-        alert("Git gud, noob")
+        var audio = new Audio ("assets/images/burp.m4a");
+        audio.play();
+        alert("Git gud, noob");
+        reset();
     }
 })
 })
